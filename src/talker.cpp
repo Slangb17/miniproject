@@ -7,7 +7,6 @@
 using namespace std;
 ros::Publisher pub1;
 
-
 // Topic messages callback
 //pose_callback
 void UI(){
@@ -81,7 +80,7 @@ int main(int argc, char **argv)
   // Enter a loop.
   while(ros::ok()){
 
-    UI();
+    UI();                                                                                                            //Function UI
 
     ros::spinOnce();
   }

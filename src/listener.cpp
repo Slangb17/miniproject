@@ -14,7 +14,7 @@ sensor_msgs::LaserScan laser_msg;
 std::vector<float> laser_ranges;
 
 using namespace std;
-unsigned int laser_ranges_size = 0;
+unsigned short laser_ranges_size = 0;
 string ans;
 bool tooClose = false;
 
