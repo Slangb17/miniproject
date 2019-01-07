@@ -32,40 +32,30 @@ void UI(){
     case ('w'):
     ss << "w";
     msg.data = ss.str();
-
     break;
 
     case ('a'):
-
     ss << "a";
     msg.data = ss.str();
-
     break;
 
     case ('s'):
-
     ss << "s";
     msg.data = ss.str();
-
     break;
 
     case ('d'):
-
     ss << "d";
     msg.data = ss.str();
-
     break;
 
     case ('x'):
-
     ss << "x";
     msg.data = ss.str();
-
     break;
 
   }
   pub1.publish(msg);
-  ros::spinOnce();
   return;
 }
 

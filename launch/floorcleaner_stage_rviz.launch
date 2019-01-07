@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <include file="$(find turtlebot_stage)/launch/turtlebot_in_stage.launch" />
+  <node name="miniproject" pkg="miniproject" type="listener.cpp" />
+  <node name="miniproject2" pkg="miniproject" type="talker.cpp" />
+</launch>

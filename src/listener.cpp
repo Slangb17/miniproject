@@ -17,9 +17,7 @@ using namespace std;
 unsigned short laser_ranges_size = 0;
 string ans;
 bool tooClose = false;
-
-
-	geometry_msgs::Twist vel_msg;
+geometry_msgs::Twist vel_msg;
 
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
 {
@@ -28,45 +26,33 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg)
 }
 
 void move_based_on_message(){
-
-
 	if(ans == "w") {
-
 		vel_msg.linear.x = 0.5;
 		vel_msg.angular.z = 0;
-
-
 	}
 	else if(ans == "a"){
 		vel_msg.linear.x = 0;
 		vel_msg.angular.z = 10;
-
-
 	}
 	else if (ans =="s"){
 		vel_msg.linear.x = -0.5;
 		vel_msg.angular.z = 0;
-
 
 	}
 	else if (ans== "d"){
 		vel_msg.linear.x = 0;
 		vel_msg.angular.z = -10;
 
-
 	}
 	else if (ans== "x"){
 		vel_msg.linear.x = 0;
 		vel_msg.angular.z = 0;
 
-
 	}
-
 }
 
 void scan_callback(const sensor_msgs::LaserScan::ConstPtr &scan_msg)
 {
-
 	// The msg is stored in laser_msg:
 	laser_msg = *scan_msg;
 
@@ -107,12 +93,7 @@ void scan_callback(const sensor_msgs::LaserScan::ConstPtr &scan_msg)
 		vel_msg.angular.z = 0;
 		tooClose==true;
 		ROS_INFO("STOPPED! TOO CLOSE TO WALL!!!");
-
 	}
-
-
-
-
 	pub.publish(vel_msg);
 }
 
